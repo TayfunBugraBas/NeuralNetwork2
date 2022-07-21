@@ -32,19 +32,30 @@ class Activation_Softmax:
         
 x, y  = spiral_data(100, 3) 
 
+print(x[:5])
+
 dense1 = LayerDense(2, 3) 
+print(dense1)
 
 activation1 = Activation_ReLU()
 
 dense2 = LayerDense(3, 3)
 
+print(dense2)
+
 activation2 = Activation_Softmax()
 
 dense1.forward(x)
 
+print(dense1.output[:5])
+
 activation1.forward(dense1.output)
 
+print(activation1.output[:5])
+
 dense2.forward(activation1.output)
+
+print(dense2.output[:5])
 
 activation2.forward(dense2.output)
 
